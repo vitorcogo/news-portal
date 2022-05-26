@@ -1,10 +1,16 @@
-module.exports = (app) => {
-    app.get('/form-add-new', (req, res) => {
+module.exports = (application) => {
+    application.get('/form-add-new', (req, res) => {
         res.render('admin/form_add_new');
     });
 
-    app.post('/news/save', (req, res) => {
-        var news = req.body;
-        res.send(news);
+    application.post('/news/save', (req, res) => {
+        var notice = req.body;
+
+        var connection = application.config.dbConnection(); 
+        var newsModel = new application.app.models.NewsDAO(connection); 
+
+        newsModel.saveNotice(notice, (err, result) => {
+            res.redirect('/news'); // redirect to news route
+        });
     });
 }
