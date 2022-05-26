@@ -11,6 +11,7 @@ NewsDAO.prototype.getNotice = function(callback) {
 } 
 
 NewsDAO.prototype.saveNotice = function(notice, callback) {
+    console.log(notice);
     this._connection.query('insert into news set ?', notice, callback); // notice is replaced in ?
 }
 
