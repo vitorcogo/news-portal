@@ -11,6 +11,7 @@ var app = express();
 app.set('view engine', 'ejs');
 app.set('views', './app/views'); // Path where the server is called
 
+// Midlewares
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // With consign 

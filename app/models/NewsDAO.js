@@ -14,6 +14,4 @@ NewsDAO.prototype.saveNotice = function(notice, callback) {
     this._connection.query('insert into news set ?', notice, callback); // notice is replaced in ?
 }
 
-module.exports = () => {
-    return News;
-}
+module.exports = () => NewsDAO;
