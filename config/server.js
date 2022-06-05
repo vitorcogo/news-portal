@@ -21,6 +21,7 @@ consign()
     .include('./app/routes')
     .then('config/dbConnection.js') // Connection module in consign
     .then('./app/models') // Include models to mySql connections/queries
+    .then('./app/controllers') // Include controllers
     .into(app);
 
 module.exports = app;
