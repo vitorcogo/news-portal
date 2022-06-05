@@ -11,7 +11,8 @@ module.exports.getNew = (application, req, res) => {
     var connection = application.config.dbConnection(); // Connection module passed in consign 
     var newModel = new application.app.models.NewsDAO(connection);
 
-    newModel.getNotice((err, result) => {
+    var id = req.query.id;
+    newModel.getNotice(id, (err, result) => {
         res.render('news/notice', { notice: result });
     });
 }

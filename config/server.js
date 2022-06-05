@@ -13,6 +13,7 @@ app.set('view engine', 'ejs');
 app.set('views', './app/views'); // Path where the server is called
 
 // Midlewares
+app.use(express.static('./app/public')); // Set static files
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(expressValidator());
 

@@ -4,6 +4,7 @@ module.exports.formAddNew = (application, req, res) => {
 
 module.exports.saveNew = (application, req, res) => {
     var notice = req.body;
+    console.log(notice);
     // Express validator
     req.assert('title', 'Título é obrigatório').notEmpty();
     req.assert('summary', 'Resumo é obrigatório').notEmpty();
