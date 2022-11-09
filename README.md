@@ -1,2 +1,2 @@
 # news-portal
-News portal created with node.js
+Portal de notícias feito com Node.js
